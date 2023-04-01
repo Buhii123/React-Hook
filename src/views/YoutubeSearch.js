@@ -2,6 +2,7 @@ import './YoutubeSearch.scss';
 import { useState, useEffect } from 'react';
 import moment from 'moment';
 import axios from 'axios';
+require('dotenv').config();
 
 const YoutubeSearch = () => {
     const [videos, setVideos] = useState([]);
@@ -14,7 +15,7 @@ const YoutubeSearch = () => {
             "params": {
                 'part': 'snippet',
                 'maxResults': '20',
-                'key': 'AIzaSyCaCzudqGH9ttNeSYF03yEuYqX-whAGYGw',
+                'key': process.env.key,
                 'type': 'video',
                 'q': query
             }
